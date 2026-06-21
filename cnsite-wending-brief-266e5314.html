@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>问鼎娱乐 · 专题介绍</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fbfbfb;
+      color: #1e1e1e;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 720px;
+      width: 90%;
+      margin: 2.8rem auto 3.2rem;
+    }
+
+    /* Hero 区 — 杂志横幅 */
+    .hero {
+      margin-bottom: 2.2rem;
+      padding: 2.8rem 0 1.6rem;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .hero-sup {
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #7e7e7e;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 550;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin: 0 0 0.35rem 0;
+      color: #111;
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: #494949;
+      max-width: 85%;
+      margin-top: 0.3rem;
+      font-weight: 380;
+    }
+
+    /* 背景说明 — 窄段 灰调 */
+    .context-note {
+      background: #f2f2f2;
+      padding: 1.8rem 2rem;
+      border-radius: 16px;
+      margin: 2rem 0 2.4rem;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #2a2a2a;
+    }
+
+    .context-note strong {
+      color: #111;
+      font-weight: 520;
+    }
+
+    /* 正文区域 三段自然介绍 */
+    .main-text {
+      margin: 2rem 0 2.5rem;
+    }
+
+    .main-text h2 {
+      font-size: 1.15rem;
+      font-weight: 550;
+      margin: 2.2rem 0 0.6rem;
+      letter-spacing: -0.01em;
+      border-left: 3px solid #222;
+      padding-left: 0.8rem;
+    }
+
+    .main-text h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .main-text p {
+      margin-bottom: 1.1rem;
+      font-size: 0.96rem;
+      color: #2c2c2c;
+    }
+
+    /* 特点卡片 */
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 2rem 0 1.6rem;
+    }
+
+    .feature-card {
+      flex: 1 1 180px;
+      background: #ffffff;
+      border: 1px solid #eaeaea;
+      border-radius: 14px;
+      padding: 1.2rem 1.1rem;
+      transition: box-shadow 0.18s ease;
+    }
+
+    .feature-card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+
+    .feature-card h3 {
+      font-size: 0.95rem;
+      font-weight: 520;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+      color: #1a1a1a;
+    }
+
+    .feature-card p {
+      font-size: 0.85rem;
+      color: #4e4e4e;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* FAQ 摘要 — 极简 */
+    .faq-mini {
+      margin: 2.2rem 0 1.8rem;
+      border-top: 1px solid #dadada;
+      padding-top: 1.5rem;
+    }
+
+    .faq-mini summary {
+      font-weight: 490;
+      font-size: 0.95rem;
+      cursor: pointer;
+      padding: 0.3rem 0;
+      color: #232323;
+    }
+
+    .faq-mini details p {
+      margin: 0.6rem 0 0.4rem 0.9rem;
+      font-size: 0.9rem;
+      color: #3b3b3b;
+    }
+
+    /* 页尾访问提示 */
+    .footer-note {
+      border-top: 1px solid #ddd;
+      padding-top: 1.8rem;
+      margin: 1.8rem 0 1.2rem;
+      font-size: 0.9rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      color: #3b3b3b;
+    }
+
+    .footer-note a {
+      color: #1a1a1a;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-thickness: 1px;
+      font-weight: 460;
+      transition: color 0.15s;
+    }
+
+    .footer-note a:hover {
+      color: #5c5c5c;
+    }
+
+    .footer-meta {
+      font-size: 0.8rem;
+      color: #7a7a7a;
+      letter-spacing: 0.3px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ebebeb;
+      margin: 1.8rem 0;
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: 92%;
+        margin: 1.8rem auto 2.4rem;
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .hero-sub {
+        max-width: 100%;
+        font-size: 0.9rem;
+      }
+      .context-note {
+        padding: 1.2rem 1.2rem;
+      }
+      .feature-card {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- HERO 横幅 -->
+    <div class="hero">
+      <div class="hero-sup">MAGAZINE · FEATURE</div>
+      <h1>问鼎娱乐<br>稳定入口与多元体验</h1>
+      <div class="hero-sub">围绕访问效率与内容结构展开的专题介绍</div>
+    </div>
+
+    <!-- 背景说明 -->
+    <div class="context-note">
+      <strong>背景</strong> · 当前数字娱乐平台在访问稳定性与信息组织上持续迭代，用户的注意力更倾向清晰、低干扰的入口路径。<strong>问鼎娱乐</strong> 在这一背景下，将服务界面与内容索引进行整合，提升浏览的连续感。
+    </div>
+
+    <!-- 三段自然介绍 + 卡片 -->
+    <div class="main-text">
+      <h2>入口逻辑与页面说明</h2>
+      <p>平台首页不再仅是单一跳转，而是作为导航中枢：使用者可通过 <a href="https://cnsite--wending.com">问鼎娱乐</a> 直接进入核心界面，省去中间页的等待与重定向。后端维持低延迟响应，前端采用极简布局减少认知负荷。</p>
+
+      <h2>内容分区与检索效率</h2>
+      <p>信息架构按“场景‑功能‑说明”分层。常见娱乐需求被归为有限类别，每类配有简短摘要，避免过度堆砌。用户到达后可在三至五步内定位到目标模块，或通过搜索索引直接调取。</p>
+
+      <h2>交互反馈与视觉一致性</h2>
+      <p>页面元素采用统一字号尺度与间距系统，按钮、卡片、链接的悬停状态均有细微反馈。非必要动效被压缩，保证在低性能设备上同样流畅。字体以系统默认字体为主，降低加载依赖。</p>
+    </div>
+
+    <!-- 特点卡片（场景/特性） -->
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>窄版式 · 高可读</h3>
+        <p>正文宽度控制在720px以内，段落间距适中，避免长行阅读疲劳。</p>
+      </div>
+      <div class="feature-card">
+        <h3>信息密度适中</h3>
+        <p>每段提供独立要点，但单屏内容不超过五项核心信息，减少滚动焦虑。</p>
+      </div>
+      <div class="feature-card">
+        <h3>链接自然嵌入</h3>
+        <p>主要入口置于叙述语境中，不依赖独立按钮，保持页面整体调性。</p>
+      </div>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-mini">
+      <details>
+        <summary>常见问题摘要 · 访问与使用</summary>
+        <p>问：页面加载异常如何处理？答：可尝试刷新或检查本地网络；平台采用冗余节点，多数情况可恢复。</p>
+        <p>问：是否支持移动端？答：使用响应式布局，窄屏下卡片与文本自动适配。</p>
+      </details>
+    </div>
+
+    <!-- 页尾访问提示 -->
+    <div class="footer-note">
+      <span>如需直接访问，<a href="https://cnsite--wending.com">问鼎娱乐</a> 提供当前版本入口。</span>
+      <span class="footer-meta">专题 · 稳定入口说明</span>
+    </div>
+
+    <hr>
+    <div style="font-size: 0.75rem; color: #9b9b9b; text-align: right; letter-spacing: 0.2px;">
+      页面结构基于杂志布局 · 内容版本 2025
+    </div>
+  </div>
+</body>
+</html>
