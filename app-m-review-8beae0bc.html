@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雷速 · 应用说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f8f6f1;
+            font-family: "Noto Serif SC", "Source Han Serif", "Songti SC", Georgia, serif;
+            color: #2d2a24;
+            line-height: 1.7;
+            padding: 2rem 1.5rem 4rem;
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3 {
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            color: #2b241c;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin: 0.8rem 0 0.2rem;
+            border-left: 6px solid #b89b7b;
+            padding-left: 1rem;
+        }
+
+        .subhead {
+            font-size: 1rem;
+            color: #7f6e5d;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .hero {
+            background: #efeae1;
+            padding: 2rem 2rem 1.8rem;
+            border-radius: 20px;
+            margin-bottom: 2.8rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+        }
+
+        blockquote {
+            background: #fffcf7;
+            border-left: 5px solid #c5ad93;
+            padding: 1.2rem 1.8rem;
+            margin: 2rem 0 2.2rem;
+            border-radius: 0 12px 12px 0;
+            font-style: normal;
+            color: #3d362f;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        blockquote p:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin: 2.4rem 0 2.6rem;
+        }
+
+        .feature-card {
+            background: #ffffffef;
+            flex: 1 1 220px;
+            padding: 1.6rem 1.4rem;
+            border-radius: 18px;
+            border: 1px solid #e5dbcf;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.02);
+            transition: box-shadow 0.2s;
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #4f3f30;
+        }
+
+        .feature-card p {
+            font-size: 0.96rem;
+            color: #4a4139;
+        }
+
+        .tip-box {
+            background: #f1ede6;
+            border-radius: 20px;
+            padding: 1.5rem 2rem;
+            margin: 2.6rem 0 2.8rem;
+            border: 1px solid #ddd3c6;
+        }
+
+        .tip-box strong {
+            color: #6b5542;
+            font-weight: 600;
+        }
+
+        .faq-summary {
+            background: #ffffffdb;
+            padding: 1.6rem 1.8rem;
+            border-radius: 18px;
+            margin: 2.2rem 0 2.6rem;
+            border-left: 4px solid #b89b7b;
+        }
+
+        .faq-summary dt {
+            font-weight: 600;
+            margin-top: 1.2rem;
+            color: #3d3229;
+        }
+
+        .faq-summary dt:first-of-type {
+            margin-top: 0;
+        }
+
+        .faq-summary dd {
+            margin-left: 0.6rem;
+            margin-bottom: 0.6rem;
+            color: #4f4439;
+        }
+
+        .cta-text {
+            font-size: 1.05rem;
+            background: #f8f2ea;
+            padding: 1.4rem 2rem;
+            border-radius: 40px;
+            text-align: center;
+            margin: 2.4rem 0 1.8rem;
+            border: 1px solid #dacebf;
+        }
+
+        a {
+            color: #7f5f40;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #cbb6a2;
+            transition: color 0.15s;
+        }
+
+        a:hover {
+            color: #4f3826;
+            text-decoration-color: #7f5f40;
+        }
+
+        footer {
+            margin-top: 3.6rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #d8cfc2;
+            font-size: 0.85rem;
+            color: #7a6c5e;
+            text-align: center;
+            letter-spacing: 0.03em;
+        }
+
+        @media (max-width: 540px) {
+            body {
+                padding: 1.2rem 1rem 3rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+                padding-left: 0.8rem;
+            }
+            .hero {
+                padding: 1.5rem 1.2rem;
+            }
+            .feature-grid {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .tip-box, .faq-summary {
+                padding: 1.2rem 1.2rem;
+            }
+            blockquote {
+                padding: 1rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <h1>雷速 · 从素材到语境的连接</h1>
+        <div class="subhead">一种围绕主题内容展开的信息组织方式</div>
+        <p>在信息碎片趋向饱和的当下，<strong>雷速</strong> 所关注的并非单纯的数据传递，而是如何将散落的关键词、段落与逻辑线索重新编织为可读、可用、可延展的知识单元。它更接近一种“语义轻加工”的尝试——不替代判断，但辅助梳理。</p>
+    </div>
+
+    <p>如果把一次信息检索比作拾取石子，那么真正有价值的往往不是石头本身，而是石子之间的排列方式。<strong>雷速</strong> 的构建逻辑就建立在这种排列之上：它以主题为锚点，将内容片段转化为彼此参照的节点，并保留让使用者自行取舍的空间。</p>
+
+    <h2>三个值得留意的特点</h2>
+
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h3>主题优先</h3>
+            <p>页面围绕核心关键词组织内容，而非依赖机器标签。每个段落都服务于一个可被理解的中心议题。</p>
+        </div>
+        <div class="feature-card">
+            <h3>段落即节点</h3>
+            <p>内容被切分为上下文自洽的短篇块，方便直接引用、复述或嵌入笔记流程，减少认知过载。</p>
+        </div>
+        <div class="feature-card">
+            <h3>低干预设计</h3>
+            <p>不预设使用者的阅读路径，不嵌入弹窗或强引导模块。信息以最朴素的文章流呈现，由读者自行判断优先级。</p>
+        </div>
+    </div>
+
+    <blockquote>
+        <p>“好的工具应当减少选择的噪音，而不是制造更多。” —— 这也是理解 <strong>雷速</strong> 的一条隐藏线索。</p>
+    </blockquote>
+
+    <p>在实际使用中，你可以将 <strong>雷速</strong> 视为一个轻量的内容参考基底。它适合在构思报告、整理专题笔记、对比不同信息源时作为对照框架。由于内容本身经过结构筛选，对于需要快速把握某一主题边界的场景尤其顺手。</p>
+
+    <div class="tip-box">
+        <strong>💡 使用建议：</strong> 尝试将 <strong>雷速</strong> 中的段落与你正在阅读的其他材料并列，你会发现同一组关键词在不同语境下会产生细微的意义偏移。这种偏移往往是洞察的起点。
+    </div>
+
+    <h2>常见疑问摘要</h2>
+    <div class="faq-summary">
+        <dl>
+            <dt>Q：雷速适合用来做什么？</dt>
+            <dd>A：作为主题内容的一种结构化呈现，适用于知识整理、写作参考、对比阅读。它不提供结论，但提供有组织的素材。</dd>
+            <dt>Q：内容会频繁更新吗？</dt>
+            <dd>A：页面内容基于相对稳定的主题框架调整，而非实时流式更新。更注重内容的可复用性而非时效性。</dd>
+            <dt>Q：需要注册或登录吗？</dt>
+            <dd>A：不需要。当前页面以及它所指向的 <a href="https://app-m-leisu.com">雷速</a> 可直接访问，不设账户门槛。</dd>
+        </dl>
+    </div>
+
+    <div class="cta-text">
+        🌿 如果你对关键词背后的内容组织方式感兴趣，不妨直接看看 <a href="https://app-m-leisu.com">雷速</a> 本身如何呈现这种思路。
+    </div>
+
+    <p style="margin-top: 0.8rem;">最后补充一点：任何信息工具都存在其视角盲区。<strong>雷速</strong> 提供的是一种经过筛选的叙述，它不能替代原始资料的查阅，也不应成为唯一的信息来源。保持交叉验证的习惯，始终是更稳健的做法。</p>
+
+    <footer>
+        <p>基于知识型内容组织 · 米白背景下的阅读式排版</p>
+    </footer>
+
+</body>
+</html>
