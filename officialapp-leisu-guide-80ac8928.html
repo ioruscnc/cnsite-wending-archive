@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雷速 · 资料整理与信息索引站</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f9fafc;
+            color: #2c3e50;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+        }
+
+        .page-wrap {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 3.5rem;
+        }
+
+        /* 极简窄正文 + 留白 */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.4rem 0 1.2rem;
+            border-bottom: 1px solid #e6edf4;
+            margin-bottom: 2.8rem;
+        }
+
+        .logo-area {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #1a2634;
+            letter-spacing: -0.01em;
+        }
+
+        .logo-area small {
+            font-size: 0.8rem;
+            font-weight: 350;
+            color: #7a8a9b;
+            margin-left: 0.3rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.6rem;
+            font-size: 0.9rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4b5c6d;
+            padding: 0.25rem 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        nav a:hover {
+            border-bottom-color: #3d7eb3;
+            color: #1a2634;
+        }
+
+        /* hero 简要介绍 */
+        .hero-block {
+            margin-bottom: 3.2rem;
+        }
+
+        .hero-block h1 {
+            font-size: 2.1rem;
+            font-weight: 520;
+            line-height: 1.25;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.2rem;
+            color: #1b2a3a;
+        }
+
+        .hero-block p {
+            font-size: 1rem;
+            color: #3f5369;
+            max-width: 600px;
+        }
+
+        .hero-block .intro-link {
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .hero-block .intro-link a {
+            color: #336699;
+            text-decoration: none;
+            border-bottom: 1px dashed #aac1d9;
+            padding-bottom: 1px;
+            transition: border-color 0.2s;
+        }
+
+        .hero-block .intro-link a:hover {
+            border-bottom-color: #1f4e79;
+        }
+
+        /* 场景卡片区 — 三个模块 */
+        .scene-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.8rem;
+            margin: 2.8rem 0;
+        }
+
+        @media (min-width: 600px) {
+            .scene-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .scene-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 1.5rem 1.3rem 1.8rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02), 0 4px 12px rgba(0,20,40,0.04);
+            transition: box-shadow 0.2s, transform 0.15s;
+            border: 1px solid #edf2f8;
+        }
+
+        .scene-card:hover {
+            box-shadow: 0 6px 16px rgba(0,0,0,0.04), 0 8px 24px rgba(0,20,40,0.06);
+            transform: translateY(-2px);
+        }
+
+        .scene-card h3 {
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin-bottom: 0.6rem;
+            color: #1f2e41;
+        }
+
+        .scene-card p {
+            font-size: 0.9rem;
+            color: #4a5d73;
+            line-height: 1.6;
+        }
+
+        .scene-card .tag {
+            display: inline-block;
+            margin-top: 1rem;
+            font-size: 0.75rem;
+            background: #eef4fa;
+            color: #2d4d6b;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+            letter-spacing: 0.02em;
+        }
+
+        /* FAQ 摘要 + 说明 */
+        .faq-section {
+            margin: 3rem 0 1.8rem;
+            padding: 1.6rem 0;
+            border-top: 1px solid #e2eaf2;
+        }
+
+        .faq-section h2 {
+            font-size: 1.3rem;
+            font-weight: 440;
+            margin-bottom: 1.2rem;
+            color: #1a2a3b;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+
+        .faq-item .q {
+            font-weight: 480;
+            color: #1e3348;
+            margin-bottom: 0.2rem;
+            font-size: 0.98rem;
+        }
+
+        .faq-item .a {
+            font-size: 0.9rem;
+            color: #4f637b;
+            margin-left: 0.3rem;
+            padding-left: 0.6rem;
+            border-left: 2px solid #dae3ed;
+        }
+
+        .faq-item .a a {
+            color: #336699;
+            text-decoration: none;
+            border-bottom: 1px dotted #b2c9de;
+        }
+
+        .faq-item .a a:hover {
+            border-bottom-color: #1f4e79;
+        }
+
+        .more-note {
+            margin-top: 2rem;
+            padding: 1.2rem 0 0.2rem;
+            font-size: 0.9rem;
+            color: #4e637a;
+            border-top: 1px solid #e2eaf2;
+        }
+
+        .more-note a {
+            color: #336699;
+            text-decoration: none;
+            border-bottom: 1px dotted #b2c9de;
+        }
+
+        .more-note a:hover {
+            border-bottom-color: #1f4e79;
+        }
+
+        /* 底部 */
+        footer {
+            margin-top: 3.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e2eaf2;
+            font-size: 0.8rem;
+            color: #7c8fa5;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+
+        footer span {
+            opacity: 0.7;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #eaf0f6;
+            margin: 0.8rem 0;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 480px) {
+            .page-wrap {
+                padding: 1.2rem 1rem 2.5rem;
+            }
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+            nav {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            .hero-block h1 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+    <!-- 顶部导航 -->
+    <header>
+        <div class="logo-area">
+            📋 雷速<span style="font-weight:300;color:#7a8a9b;">·索引</span>
+            <small>资料整理</small>
+        </div>
+        <nav>
+            <a href="#">整理</a>
+            <a href="#">场景</a>
+            <a href="#">说明</a>
+        </nav>
+    </header>
+
+    <!-- 核心介绍 (hero) -->
+    <div class="hero-block">
+        <h1>信息整理，<br>从一份清晰的索引开始</h1>
+        <p>
+            日常浏览、记录、对比——面对散落的信息，我们更希望有一个轻量的参照。
+            <a href="https://officialapp-leisu.com" style="color:#336699;text-decoration:none;border-bottom:1px dashed #aac1d9;">雷速</a> 
+            就是这样一个位置：它不是工具大全，而是一个帮助你理清线索、保持聚焦的资料索引。
+        </p>
+        <div class="intro-link">
+            <span>如果你习惯从一处出发，不妨把 </span>
+            <a href="https://officialapp-leisu.com">雷速</a>
+            <span> 当作你的信息集合点。</span>
+        </div>
+    </div>
+
+    <!-- 三个场景模块 (轻量卡片) -->
+    <div class="scene-grid">
+        <div class="scene-card">
+            <h3>📂 资料归档</h3>
+            <p>把不同来源的文章、笔记、链接按主题归拢。减少重复翻阅，留出更多时间阅读本身。</p>
+            <span class="tag">日常整理</span>
+        </div>
+        <div class="scene-card">
+            <h3>🔍 快速对照</h3>
+            <p>当需要同时参考几个页面或版本时，一个集中的索引比书签栏更直观，也比较不容易遗漏。</p>
+            <span class="tag">多源参照</span>
+        </div>
+        <div class="scene-card">
+            <h3>📌 兴趣线索</h3>
+            <p>把偶然看到的文章、工具、灵感保留下来，再定期回顾。很多有用的想法都来自第二次翻阅。</p>
+            <span class="tag">灵感备忘</span>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要 + 常见说明 -->
+    <div class="faq-section">
+        <h2>一些常见的问题 · 说明</h2>
+        <div class="faq-item">
+            <div class="q">Q: 这个页面是做什么用的？</div>
+            <div class="a">它是一个轻量的信息索引介绍。你可以把它看作一个起点，围绕 
+                <a href="https://officialapp-leisu.com">雷速</a> 整理自己的常用内容。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">Q: 内容会频繁更新吗？</div>
+            <div class="a">索引本身保持稳定，但指向的页面内容会根据整理节奏调整。建议偶尔回来看看结构有没有变化。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">Q: 如何使用这些场景卡片？</div>
+            <div class="a">每张卡片代表一种整理思路。你可以参考其中的描述，在自己的笔记或收藏夹里建立对应的分类。</div>
+        </div>
+
+        <div class="more-note">
+            <p>💡 关于信息整理的简单原则：先收集，后分类；不追求一次完美，重要的是持续积累。如果需要一个固定的入口， 
+            <a href="https://officialapp-leisu.com">雷速</a> 可以作为你资料整理的第一站。</p>
+            <p style="margin-top:0.8rem;font-size:0.85rem;color:#5f748b;">—— 本页仅提供索引思路，不存储用户数据，也不追踪浏览行为。</p>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <footer>
+        <div>
+            <a href="https://officialapp-leisu.com" style="color:#3d5e7a;text-decoration:none;border-bottom:1px dotted #b0c8de;">雷速</a>
+            <span> · 资料索引页</span>
+        </div>
+        <div>
+            <span>版本 · 2406</span>
+        </div>
+    </footer>
+
+    <!-- 仅用于结构稳定，无可见内容 -->
+</div>
+</body>
+</html>
